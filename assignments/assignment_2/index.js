@@ -1,6 +1,12 @@
 const http = require("http");
 const fs = require("fs");
 
+
+fs.writeFile("index.html", "<h1>Hello World</h1>", (err)=>{
+    console.log(err);
+});
+
+
 const server = http.createServer((req, res)=>{
     // console.log(req.url);
     res.writeHead(200, {"Content-type" :"text/html"})
@@ -15,6 +21,6 @@ const server = http.createServer((req, res)=>{
     })
 });
 
-server.listen(3000, ()=>{
-    console.log("Server started at 5050");
+server.listen(3030, ()=>{
+    console.log("Server started at 3030");
 })
