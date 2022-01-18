@@ -24,7 +24,7 @@ app.get("/form",(req,res)=>{
     res.render('form');
 });
 
-app.post('/user/add',async (req, res)=>{
+app.post('/users/add',async(req, res)=>{
     // console.log(req.body)
     try{
         await users.create({
@@ -58,7 +58,7 @@ app.delete("/users/:id",async(req,res)=>{
     res.redirect('/')
 })
 
-port = 3010;
+port = 3000;
 app.listen(port,()=>{
     console.log(`Server Started at ${port}`);
 });
