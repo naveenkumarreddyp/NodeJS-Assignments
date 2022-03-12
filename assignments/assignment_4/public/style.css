@@ -1,0 +1,66 @@
+body{
+    background-color: rgb(149, 216, 194);
+}
+.heading{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+}
+.button{
+    padding:5px;
+    border: 2px solid black;
+    text-decoration: none;
+    color:white;
+    background-color: rgb(25, 48, 48);
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+.button:hover{
+    background-color: rgb(45, 190, 142);
+}
+.headingText{
+    padding-left: 1.5rem;
+}
+.user{
+    border-radius: 2px solid black;
+    width: 30%;
+    padding: 2rem;
+    box-sizing: border-box;
+    background-color: rgb(136, 128, 128);
+    margin: 10px;
+    border-radius: 20px;;
+}
+.usercontainer{
+    display:flex;
+    flex-direction: row;   
+    flex-wrap: wrap;
+}
+/* Form page */
+
+.formElement{
+    text-align: center;
+    margin-top: 10rem;
+    font-size: 2rem;
+}
+.button1{
+    font-size: 1.5rem;
+}
+.inputbar{
+    height:1.5rem;
+    width:15rem;
+}
+.buttonhome{
+    display: flex;
+    justify-content: space-around;
+}
+.notdecided{
+    color:yellow;
+}
+.demoted{
+    color:red;
+}
+.promoted{
+    color:green;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>React App with Express</title>
+</head>
+<body>
+    <div class="heading">
+        <h2>Register here</h2>
+        <a href="/form" class="button" >Register</a>
+    </div>
+    <h2 class="headingText">Our Users :-</h2>
+    <div class="usercontainer">
+        <% userData.forEach((user)=>{%>
+            <div class="user">
+                <% if(user.isPromoted === null){ %>
+                    <div class="notdecided">
+                        <h2><%='User Name : '%> <%= user.name %></h2>
+                        <h3><%='User Email : '%><%= user.email %></h3>
+                    </div>
+                <% } else if(user.isPromoted === false){ %>
+                    <div class="demoted">
+                        <h2><%='User Name : '%> <%= user.name %></h2>
+                        <h3><%='User Email : '%><%= user.email %></h3>
+                    </div>
+                <% } else if (user.isPromoted === true){ %>
+                    <div class="promoted">
+                        <h2><%='User Name : '%> <%= user.name %></h2>
+                        <h3><%='User Email : '%><%= user.email %></h3>
+                    </div>
+                <% } %>
+                <div class="buttonhome">
+                    <form method="POST" action="/users/<%= user._id %>?_method=PUT">
+                        <button class="btn1" id="edit-<%= user.name %>" type="submit">
+                            <% if(user.isPromoted === true){ %>
+                                <%= 'Demote' %>
+                            <%} else {%>
+                                <%= 'Promote' %>
+                            <% } %> 
+                            </button>
+                    </form>
+                    <form method="POST" action="/users/<%= user._id %>?_method=DELETE">
+                        <button class="btn1" id="delete-<%= user.name %>">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <%});%>
+    </div>
+</body>
+</html>
